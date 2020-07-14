@@ -5,6 +5,9 @@ class Card {
     this._cardText = cardText;
     this._cardProductData = cardProductData;
     this._color = color;
+    this._stateToggle = this._stateToggle.bind(this);
+    this._stageHover = this._stageHover.bind(this);
+    this._stageDefault = this._stageDefault.bind(this);
   }
 
   _render() {
@@ -23,6 +26,7 @@ class Card {
     this._cardBg.style.backgroundColor = this._color.default;
     this._cardWeight.style.backgroundColor = this._color.default;
     this._cardNote.style.color = this._color.defaultNote;
+    this._cardLink.style.color = this._color.default;
     if (this._cardLink.classList.contains('element-invisible')) {
       this._cardLink.classList.remove('element-invisible');
     };
@@ -33,6 +37,14 @@ class Card {
     this._cardWeightValue.textContent = this._cardProductData.weight;
     this._cardNote.textContent = this.cardText.noteDefault;
     this._cardNoteLink = this.cardText.noteDefaultLink;
+    this._cardItem.removeAttribute('name');
+    this._cardItem.setAttribute('name', 'default');
+  }
+
+  _defaultHover() {
+    this._default();
+    this._cardBg.style.backgroundColor = this._color.defaultHover;
+    this._cardWeight.style.backgroundColor = this._color.defaultHover;
   }
 
   _selected() {
@@ -42,6 +54,14 @@ class Card {
     this._cardLink.classList.add('element-invisible');
     this._cardBg.style.backgroundColor = this._color.selected;
     this._cardWeight.style.backgroundColor = this._color.selected;
+    this._cardItem.removeAttribute('name');
+    this._cardItem.setAttribute('name', 'selected');
+  }
+
+  _selectedHover() {
+    this._selected();
+    this._cardBg.style.backgroundColor = this._color.selectedHover;
+    this._cardWeight.style.backgroundColor = this._color.selectedHover;
   }
 
   _disabled() {
@@ -52,6 +72,31 @@ class Card {
     this._cardLink.classList.add('element-invisible');
     this._cardBg.style.backgroundColor = this._color.disabled
     this._cardWeight.style.backgroundColor = this._color.disabled;
+    this._cardItem.removeAttribute('name');
+    this._cardItem.setAttribute('name', 'disabled');
+  }
+
+  _stateToggle(event) {
+    if (event.target === this._cardItem && event.target.getAttribute('name') === 'default') { this._selected };
+    if (event.target === this._cardItem && event.target.getAttribute('name') === 'selected') { this._disabled };
+    if (event.target === this._cardItem && event.target.getAttribute('name') === 'disabled') { this._default };
+  }
+
+  _stageHover(event) {
+    if (event.target === this._cardItem && event.target.getAttribute('name') === 'default') { this._defaultHover };
+    if (event.target === this._cardItem && event.target.getAttribute('name') === 'selected') { this._selectedHover };
+  }
+
+  _stageDefault(event) {
+    if (event.target === this._cardItem && event.target.getAttribute('name') === 'default') { this._default };
+    if (event.target === this._cardItem && event.target.getAttribute('name') === 'selected') { this._selected };
+  }
+
+  setEventListeners() {
+    this._cardItem.addEventListener('mouseover', this._stageHover);
+    this._cardItem.addEventListener('mouseout', this._stageDefault);
+    this._cardItem.addEventListener('click', this._stateToggle);
+    this._cardItem.addEventListener('click', () => (console.log(event.target)))
   }
 
 }

@@ -5,7 +5,7 @@ const cardText = {
   noteDefaultLink: ' купи.'
 }
 
-const cardFuaGra = {
+const dataFuaGra = {
   subtitle: 'с фуа-гра',
   portion: '10 порций',
   mouse: 'мышь в подарок',
@@ -13,7 +13,7 @@ const cardFuaGra = {
   note: 'Печень утки разварная с артишоками.'
 }
 
-const cardFish = {
+const dataFish = {
   subtitle: 'с рыбой',
   portion: '40 порций',
   mouse: '2 мыши в подарок',
@@ -21,7 +21,7 @@ const cardFish = {
   note: 'Головы щучьи с чесноком да свежайшая сёмгушка.'
 }
 
-const cardChicken = {
+const dataChicken = {
   subtitle: 'с курой',
   portion: '100 порций',
   mouse: '5 мышей в подарок',
