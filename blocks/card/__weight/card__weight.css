@@ -1,0 +1,14 @@
+.card__weight {
+  margin: 0;
+  width: 82px;
+  height: 82px;
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  background-color: #1698d9;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,8 @@
+.card__weight-measure {
+  margin: 0;
+  color: #fff;
+  font-family: Trebuchet MS;
+  font-size: 17px;
+  font-weight: normal;
+  transform: translate(0, -5px);
+}
