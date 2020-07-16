@@ -1,7 +1,6 @@
 class Card {
-  constructor (cardItem, cardBg, cardText, cardProductData, color) {
+  constructor (cardItem, cardText, cardProductData, color) {
     this._cardItem = cardItem;
-    this._cardBg = cardBg;
     this._cardText = cardText;
     this._cardProductData = cardProductData;
     this._color = color;
@@ -11,14 +10,16 @@ class Card {
   }
 
   _render() {
-    this._cardProduct = this._cardItem.querySelector('#card__product');
-    this._cardSubtitle = this._cardItem.querySelector('#card__subtitle');
-    this._cardPortion = this._cardItem.querySelector('#ard__description-portion');
-    this._cardMouse = this._cardItem.querySelector('#card__description-mouse');
-    this._cardWeight = this.cardItem.querySelector('#card__weight');
-    this._cardWeightValue = this._cardItem.querySelector('#card__weight-value');
-    this._cardNote = this._cardItem.querySelector('#card__note');
-    this._cardLink = this._cardItem.querySelector('#card__note-link');
+    this._cardBg = this._cardItem.querySelector('.card__bg');
+    this._card = this._cardItem.querySelector('.card');
+    this._cardProduct = this._cardItem.querySelector('.card__product');
+    this._cardSubtitle = this._cardItem.querySelector('.card__subtitle');
+    this._cardPortion = this._cardItem.querySelector('.card__description-portion');
+    this._cardMouse = this._cardItem.querySelector('.card__description-mouse');
+    this._cardWeight = this._cardItem.querySelector('.card__weight');
+    this._cardWeightValue = this._cardItem.querySelector('.card__weight-value');
+    this._cardNote = this._cardItem.querySelector('.card__note');
+    this._cardLink = this._cardItem.querySelector('.card__note-link');
   }
 
   _default() {
@@ -35,10 +36,10 @@ class Card {
     this._cardPortion.textContent = this._cardProductData.portion;
     this._cardMouse.textContent = this._cardProductData.mouse;
     this._cardWeightValue.textContent = this._cardProductData.weight;
-    this._cardNote.textContent = this.cardText.noteDefault;
-    this._cardNoteLink = this.cardText.noteDefaultLink;
-    this._cardItem.removeAttribute('name');
-    this._cardItem.setAttribute('name', 'default');
+    this._cardNote.textContent = this._cardText.noteDefault;
+    this._cardLink.textContent = this._cardText.noteDefaultLink;
+    this._card.removeAttribute('name');
+    this._card.setAttribute('name', 'default');
   }
 
   _defaultHover() {
@@ -49,13 +50,13 @@ class Card {
 
   _selected() {
     this._default();
-    this._cardNote.textContent = this.cardProductData.note;
+    this._cardNote.textContent = this._cardProductData.note;
     this._cardLink.textContent = '';
     this._cardLink.classList.add('element-invisible');
     this._cardBg.style.backgroundColor = this._color.selected;
     this._cardWeight.style.backgroundColor = this._color.selected;
-    this._cardItem.removeAttribute('name');
-    this._cardItem.setAttribute('name', 'selected');
+    this._card.removeAttribute('name');
+    this._card.setAttribute('name', 'selected');
   }
 
   _selectedHover() {
@@ -66,37 +67,38 @@ class Card {
 
   _disabled() {
     this._default();
-    this._cardNote.textContent = `Печалька, ${this.cardProductData.subtitle} закончился.`;
+    this._cardNote.textContent = `Печалька, ${this._cardProductData.subtitle} закончился.`;
     this._cardNote.style.color = this._color.disabledNote;
     this._cardLink.textContent = '';
     this._cardLink.classList.add('element-invisible');
     this._cardBg.style.backgroundColor = this._color.disabled
     this._cardWeight.style.backgroundColor = this._color.disabled;
-    this._cardItem.removeAttribute('name');
-    this._cardItem.setAttribute('name', 'disabled');
+    this._card.removeAttribute('name');
+    this._card.setAttribute('name', 'disabled');
   }
 
   _stateToggle(event) {
-    if (event.target === this._cardItem && event.target.getAttribute('name') === 'default') { this._selected };
-    if (event.target === this._cardItem && event.target.getAttribute('name') === 'selected') { this._disabled };
-    if (event.target === this._cardItem && event.target.getAttribute('name') === 'disabled') { this._default };
+    if (event.target.closest('.card__bg').querySelector('.card').getAttribute('name') == 'default') { this._selected() };
+    if (event.target.closest('.card__bg').querySelector('.card').getAttribute('name') == 'selected') { this._disabled() };
+    if (event.target.closest('.card__bg').querySelector('.card').getAttribute('name') == 'disabled') { this._default() };
   }
 
   _stageHover(event) {
-    if (event.target === this._cardItem && event.target.getAttribute('name') === 'default') { this._defaultHover };
-    if (event.target === this._cardItem && event.target.getAttribute('name') === 'selected') { this._selectedHover };
+    if (event.target.closest('.card__bg').querySelector('.card').getAttribute('name') == 'default') { this._defaultHover() };
+    if (event.target.closest('.card__bg').querySelector('.card').getAttribute('name') == 'selected') { this._selectedHover() };
   }
 
   _stageDefault(event) {
-    if (event.target === this._cardItem && event.target.getAttribute('name') === 'default') { this._default };
-    if (event.target === this._cardItem && event.target.getAttribute('name') === 'selected') { this._selected };
+    if (event.target.closest('.card__bg').querySelector('.card').getAttribute('name') == 'default') { this._default() };
+    if (event.target.closest('.card__bg').querySelector('.card').getAttribute('name') == 'selected') { this._selected() };
   }
 
   setEventListeners() {
-    this._cardItem.addEventListener('mouseover', this._stageHover);
-    this._cardItem.addEventListener('mouseout', this._stageDefault);
-    this._cardItem.addEventListener('click', this._stateToggle);
-    this._cardItem.addEventListener('click', () => (console.log(event.target)))
+    this._default();
+    this._cardBg.addEventListener('mouseover', this._stageHover);
+    this._cardBg.addEventListener('mouseout', this._stageDefault);
+    this._cardBg.addEventListener('click', this._stateToggle);
+    this._cardBg.addEventListener('click', () => (console.log(event.target.closest('.card'))))
   }
 
 }
