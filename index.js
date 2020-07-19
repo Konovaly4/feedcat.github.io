@@ -6,6 +6,6 @@ const fuaGra = new Card(cardFuaGra, cardText, dataFuaGra, color);
 const fish = new Card(cardFish,cardText, dataFish, color);
 const chicken = new Card(cardChicken, cardText, dataChicken, color);
 
-fuaGra.setEventListeners();
-fish.setEventListeners();
-chicken.setEventListeners();
+fuaGra._default();
+fish._selected();
+chicken._disabled();
