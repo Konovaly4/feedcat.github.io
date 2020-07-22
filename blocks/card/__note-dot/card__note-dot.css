@@ -1,7 +1,7 @@
-.card__note {
+.card__note-dot {
   margin: 0;
-  white-space: pre;
   font-family: Trebuchet MS;
   font-size: 13px;
-  color: #fff;
+  color:#1698d9;
+  text-decoration: none;
 }

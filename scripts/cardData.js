@@ -1,8 +1,8 @@
 const cardText = {
   product: 'Сказочное заморское яство',
   productSelectedHover: 'Котэ не одобряет?',
-  noteDefault: 'Чего сидишь? Порадуй котэ,  ',
-  noteDefaultLink: ' купи.'
+  noteDefault: 'Чего сидишь? Порадуй котэ, ',
+  noteDefaultLink: 'купи'
 }
 
 const dataFuaGra = {

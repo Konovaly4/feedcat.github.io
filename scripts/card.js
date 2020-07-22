@@ -21,6 +21,7 @@ class Card {
     this._cardWeightValue = this._cardItem.querySelector('.card__weight-value');
     this._cardNote = this._cardItem.querySelector('.card__note');
     this._cardLink = this._cardItem.querySelector('.card__note-link');
+    this._cardNoteDot = this._cardItem.querySelector('.card__note-dot');
   }
 
   _setState() {
@@ -44,6 +45,9 @@ class Card {
     if (this._cardLink.classList.contains('element-invisible')) {
       this._cardLink.classList.remove('element-invisible');
     };
+    if (this._cardNoteDot.classList.contains('element-invisible')) {
+      this._cardNoteDot.classList.remove('element-invisible');
+    };
     this._card.removeAttribute('name');
     this._card.setAttribute('name', 'default');
     this._setEventListeners();
@@ -62,6 +66,9 @@ class Card {
     this._cardLink.textContent = '';
     if (!this._cardLink.classList.contains('element-invisible')) {
       this._cardLink.classList.add('element-invisible');
+    };
+    if (!this._cardNoteDot.classList.contains('element-invisible')) {
+      this._cardNoteDot.classList.add('element-invisible');
     };
     this._cardBg.style.backgroundColor = this._color.selected;
     this._cardWeight.style.backgroundColor = this._color.selected;
@@ -84,6 +91,9 @@ class Card {
     this._cardLink.textContent = '';
     if (!this._cardLink.classList.contains('element-invisible')) {
       this._cardLink.classList.add('element-invisible');
+    };
+    if (!this._cardNoteDot.classList.contains('element-invisible')) {
+      this._cardNoteDot.classList.add('element-invisible');
     };
     this._cardBg.style.backgroundColor = this._color.disabled
     this._cardWeight.style.backgroundColor = this._color.disabled;

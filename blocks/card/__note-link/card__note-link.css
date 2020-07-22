@@ -1,0 +1,8 @@
+.card__note-link {
+  margin: 0;
+  font-family: Trebuchet MS;
+  font-size: 13px;
+  color:#1698d9;
+  text-decoration: none;
+  border-bottom: 1px dashed;
+}
