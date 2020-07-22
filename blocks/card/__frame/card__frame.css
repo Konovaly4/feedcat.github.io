@@ -1,0 +1,12 @@
+.card__frame {
+  margin: 0 0 17px;
+  width: 320px;
+  height: 480px;
+  border-radius: 10px;
+  /* clip-path: polygon(14% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 9%); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}

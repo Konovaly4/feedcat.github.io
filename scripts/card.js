@@ -10,6 +10,7 @@ class Card {
   }
 
   _render() {
+    this._cardFrame = this._cardItem.querySelector('.card__frame');
     this._cardBg = this._cardItem.querySelector('.card__bg');
     this._card = this._cardItem.querySelector('.card');
     this._cardProduct = this._cardItem.querySelector('.card__product');
@@ -107,15 +108,15 @@ class Card {
   }
 
   _setEventListeners() {
-    this._cardBg.addEventListener('mouseover', this._stageHover);
-    this._cardBg.addEventListener('mouseout', this._stageDefault);
-    this._cardBg.addEventListener('click', this._stateToggle);
+    this._cardFrame.addEventListener('mouseover', this._stageHover);
+    this._cardFrame.addEventListener('mouseout', this._stageDefault);
+    this._cardFrame.addEventListener('click', this._stateToggle);
   }
 
   _removeEventListeners() {
-    this._cardBg.removeEventListener('mouseover', this._stageHover);
-    this._cardBg.removeEventListener('mouseout', this._stageDefault);
-    this._cardBg.removeEventListener('click', this._stateToggle);
+    this._cardFrame.removeEventListener('mouseover', this._stageHover);
+    this._cardFrame.removeEventListener('mouseout', this._stageDefault);
+    this._cardFrame.removeEventListener('click', this._stateToggle);
   }
 
 }

@@ -1,6 +1,7 @@
 @import url('./title/title.css');
 @import url('./cards/cards.css');
 @import url('./cards/__container/card__container.css');
+@import url('./card/__frame/card__frame.css');
 @import url('./card/__bg/card__bg.css');
 @import url('./card/card.css');
 @import url('./card/__text/card__text.css');
@@ -12,6 +13,7 @@
 @import url('./card/__weight-value/card__weight-value.css');
 @import url('./card/__weight-measure/card__weight-measure.css');
 @import url('./card/__cat/card__cat.css');
+@import url('./card/__note-container/card__note-container.css');
 @import url('./card/__note/card__note.css');
 @import url('./element-invisible.css');
 
