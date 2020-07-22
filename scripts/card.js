@@ -38,7 +38,7 @@ class Card {
   _default() {
     this._setState();
     this._removeEventListeners();
-    this._cardBg.style.backgroundColor = this._color.default;
+    this._cardFrame.style.background = `linear-gradient(135deg, transparent 30px, ${this._color.default} 0)`;
     this._cardWeight.style.backgroundColor = this._color.default;
     this._cardNote.style.color = this._color.defaultNote;
     this._cardLink.style.color = this._color.default;
@@ -55,7 +55,7 @@ class Card {
 
   _defaultHover() {
     this._default();
-    this._cardBg.style.backgroundColor = this._color.defaultHover;
+    this._cardFrame.style.background = `linear-gradient(135deg, transparent 30px, ${this._color.defaultHover} 0)`;
     this._cardWeight.style.backgroundColor = this._color.defaultHover;
   }
 
@@ -70,7 +70,7 @@ class Card {
     if (!this._cardNoteDot.classList.contains('element-invisible')) {
       this._cardNoteDot.classList.add('element-invisible');
     };
-    this._cardBg.style.backgroundColor = this._color.selected;
+    this._cardFrame.style.background = `linear-gradient(135deg, transparent 30px, ${this._color.selected} 0)`;
     this._cardWeight.style.backgroundColor = this._color.selected;
     this._card.removeAttribute('name');
     this._card.setAttribute('name', 'selected');
@@ -79,7 +79,7 @@ class Card {
 
   _selectedHover() {
     this._selected();
-    this._cardBg.style.backgroundColor = this._color.selectedHover;
+    this._cardFrame.style.background = `linear-gradient(135deg, transparent 30px, ${this._color.selectedHover} 0)`;
     this._cardWeight.style.backgroundColor = this._color.selectedHover;
   }
 
@@ -95,7 +95,7 @@ class Card {
     if (!this._cardNoteDot.classList.contains('element-invisible')) {
       this._cardNoteDot.classList.add('element-invisible');
     };
-    this._cardBg.style.backgroundColor = this._color.disabled
+    this._cardFrame.style.background = `linear-gradient(135deg, transparent 30px, ${this._color.disabled} 0)`;
     this._cardWeight.style.backgroundColor = this._color.disabled;
     this._card.removeAttribute('name');
     this._card.setAttribute('name', 'disabled');
