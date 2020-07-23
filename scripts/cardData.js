@@ -38,3 +38,5 @@ const color = {
   disabled: '#b3b3b3',
   disabledNote: '#bbbb4b',
 }
+
+export {cardText, dataFuaGra, dataFish, dataChicken, color};

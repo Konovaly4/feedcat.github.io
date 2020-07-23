@@ -1,4 +1,4 @@
-class Card {
+export default class Card {
   constructor (cardItem, cardText, cardProductData, color) {
     this._cardItem = cardItem;
     this._cardText = cardText;
@@ -35,7 +35,7 @@ class Card {
     this._cardLink.textContent = this._cardText.noteDefaultLink;
   }
 
-  _default() {
+  default() {
     this._setState();
     this._removeEventListeners();
     this._cardFrame.style.background = `linear-gradient(135deg, transparent 30px, ${this._color.default} 0)`;
@@ -53,13 +53,13 @@ class Card {
     this._setEventListeners();
   }
 
-  _defaultHover() {
-    this._default();
+  defaultHover() {
+    this.default();
     this._cardFrame.style.background = `linear-gradient(135deg, transparent 30px, ${this._color.defaultHover} 0)`;
     this._cardWeight.style.backgroundColor = this._color.defaultHover;
   }
 
-  _selected() {
+  selected() {
     this._setState();
     this._removeEventListeners();
     this._cardNote.textContent = this._cardProductData.note;
@@ -77,13 +77,13 @@ class Card {
     this._setEventListeners();
   }
 
-  _selectedHover() {
-    this._selected();
+  selectedHover() {
+    this.selected();
     this._cardFrame.style.background = `linear-gradient(135deg, transparent 30px, ${this._color.selectedHover} 0)`;
     this._cardWeight.style.backgroundColor = this._color.selectedHover;
   }
 
-  _disabled() {
+  disabled() {
     this._setState();
     this._removeEventListeners();
     this._cardNote.textContent = `Печалька, ${this._cardProductData.subtitle} закончился.`;
@@ -103,18 +103,18 @@ class Card {
   }
 
   _stateToggle() {
-  this._card.getAttribute('name') == 'default' ? this._selected() : 
-  this._card.getAttribute('name') == 'selected' ?  this._disabled() : this._default();
+  this._card.getAttribute('name') == 'default' ? this.selected() :
+  this._card.getAttribute('name') == 'selected' ?  this.disabled() : this.default();
   }
 
   _stageHover() {
-    if (this._card.getAttribute('name') == 'default') { this._defaultHover() };
-    if (this._card.getAttribute('name') == 'selected') { this._selectedHover() };
+    if (this._card.getAttribute('name') == 'default') { this.defaultHover() };
+    if (this._card.getAttribute('name') == 'selected') { this.selectedHover() };
   }
 
   _stageDefault() {
-    if (this._card.getAttribute('name') == 'default') { this._default() };
-    if (this._card.getAttribute('name') == 'selected') { this._selected() };
+    if (this._card.getAttribute('name') == 'default') { this.default() };
+    if (this._card.getAttribute('name') == 'selected') { this.selected() };
   }
 
   _setEventListeners() {
