@@ -1,9 +1,18 @@
 .title {
-  margin: 38px 0 23px;
+  margin: 0;
+  /* 38px */
+  max-width: 100%;
+  text-align: center;
   color: #ffffff;
   font-family: 'Exo 2.0 Thin';
   font-style: normal;
   font-weight: normal;
   font-size: 36px;
   z-index: 1;
+}
+
+@media screen and (max-width: 1120px) {
+  .title {
+    margin: 38px 0 0;
+  }
 }
