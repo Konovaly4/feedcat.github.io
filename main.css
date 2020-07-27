@@ -1,0 +1,26 @@
+.title{margin:0;max-width:100%;text-align:center;color:#fff;font-family:"Exo 2.0 Thin";font-style:normal;font-weight:400;font-size:36px;z-index:1}@media screen and (max-width:1120px){.title{margin:38px 0 0}}
+.cards{margin:0;width:100%;display:flex;justify-content:center;align-items:flex-start;flex-wrap:wrap}@media screen and (max-width:768px){.cards{flex-direction:column;justify-content:flex-start;align-items:center}}
+.card__container{margin:23px 80px 0 0;width:320px;display:flex;flex-direction:column;justify-content:flex-start;align-items:center}.card__container:last-of-type{margin:23px 0 0}@media screen and (max-width:1120px){.card__container{margin:23px 80px 0 0}.card__container:first-of-type{margin:23px 80px 0}}@media screen and (max-width:1024px){.card__container{margin:23px 0 0}.card__container:first-of-type{margin:23px 80px 0 0}}@media screen and (max-width:768px){.card__container,.card__container:first-of-type{margin:23px 0 0}}
+.card__frame{margin:0 0 17px;width:320px;height:480px;border-radius:10px;display:flex;justify-content:center;align-items:center;position:relative;overflow:hidden}
+.card__bg{margin:0;width:800px;height:480px;position:absolute;top:0;left:0;transform:skew(-45deg,0deg) translate(-198px)}
+.card{margin:0;width:312px;height:472px;border-radius:10px;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;position:relative;overflow:hidden;background:linear-gradient(135deg,transparent 29px,#fff 0)}
+.card__text{width:222px;display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start;z-index:1}
+.card__product{margin:17px 0 10px;font-family:Trebuchet MS;font-size:16px;color:#666}
+.card__title{margin:0;color:#000;font-family:Trebuchet MS;font-size:48px;font-weight:700}
+.card__subtitle{margin:0 0 15px;color:#000;font-family:Trebuchet MS;font-size:24px;font-weight:700}
+.card__description{margin:0;color:#666;font-family:Trebuchet MS;font-size:14px;font-weight:400}
+.card__weight{margin:0;width:82px;height:82px;position:absolute;bottom:14px;right:14px;background-color:#1698d9;border-radius:50%;display:flex;flex-direction:column;justify-content:center;align-items:center;z-index:1}
+.card__weight-value{margin:0;color:#fff;font-family:Trebuchet MS;font-size:43px;font-weight:400}
+.card__weight-measure{margin:0;color:#fff;font-family:Trebuchet MS;font-size:17px;font-weight:400;transform:translateY(-5px)}
+.card__cat{position:absolute;left:-34px;bottom:-92px;z-index:1}
+.card__note-container{width:auto;height:auto;display:flex;justify-content:center;align-items:center}
+.card__note{margin:0;white-space:pre;font-family:Trebuchet MS;font-size:13px;color:#fff}
+.card__note-link{margin:0;font-family:Trebuchet MS;font-size:13px;color:#1698d9;text-decoration:none;border-bottom:1px dashed}
+.card__note-dot{margin:0;font-family:Trebuchet MS;font-size:13px;color:#1698d9;text-decoration:none}
+.element-invisible{display:none}
+.element-disabled{opacity:.4}
+.text-disabled{color:#b3b3b3;opacity:.5}
+.text-selected{color:#e62e7a}
+.page{width:100%;height:100vh;margin:auto;background-image:url(4c3ad620c4c1e629cc1f569e4feaf4f2.png);display:flex;flex-direction:column;justify-content:center;align-items:center}@media screen and (max-width:1120px){.page{height:100%;justify-content:flex-start}}
+@font-face{font-family:"Exo 2.0 Thin";src:url(51c257bfa8ec3e0cfb4bb850711b22c7.otf)}
+body{margin:0}
