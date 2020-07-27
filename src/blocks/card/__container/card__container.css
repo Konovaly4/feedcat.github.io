@@ -1,7 +1,6 @@
 .card__container {
   margin: 23px 80px 0 0;
   width: 320px;
-  /* height: 100%; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -30,6 +29,10 @@
   .card__container:first-of-type {
     margin: 23px 80px 0 0;
   }
+
+  .card__container:last-of-type {
+    margin: 23px 0 23px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -40,4 +43,5 @@
   .card__container:first-of-type {
     margin: 23px 0 0;
   }
+
 }

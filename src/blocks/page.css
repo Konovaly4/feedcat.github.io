@@ -1,8 +1,7 @@
 @import url('./title/title.css');
 @import url('./cards/cards.css');
-@import url('./cards/__container/card__container.css');
+@import url('./card/__container/card__container.css');
 @import url('./card/__frame/card__frame.css');
-@import url('./card/__bg/card__bg.css');
 @import url('./card/card.css');
 @import url('./card/__text/card__text.css');
 @import url('./card/__product/card__product.css');
@@ -28,7 +27,6 @@
   height: 100vh;
   margin: auto;
   background-image: url('../images/background.png');
-  /* background-size: cover; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,7 +36,6 @@
 @media screen and (max-width: 1120px) {
   .page {
     height: 100%;
-    /* background-repeat: repeat-y; */
     justify-content: flex-start;
   }
 }

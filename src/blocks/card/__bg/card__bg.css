@@ -1,9 +1,0 @@
-.card__bg {
-  margin: 0;
-  width: 800px;
-  height: 480px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: skew(-45deg, 0deg) translate(-198px, 0);
-}
