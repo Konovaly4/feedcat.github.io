@@ -19,6 +19,10 @@
   .card__container:first-of-type {
     margin: 23px 80px 0;
   }
+  
+  .card__container:last-of-type {
+    margin: 23px 0 23px;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -28,10 +32,6 @@
 
   .card__container:first-of-type {
     margin: 23px 80px 0 0;
-  }
-
-  .card__container:last-of-type {
-    margin: 23px 0 23px;
   }
 }
 
